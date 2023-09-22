@@ -7,7 +7,7 @@ namespace DataAccess
         public static List<Category> GetCategories()
         {
             var lstCategories = new List<Category>();
-            using (var context = new Prn221dbContext())
+            using (var context = new Lab1231Context())
             {
                 lstCategories = context.Categories.ToList();
             }

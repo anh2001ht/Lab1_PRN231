@@ -32,7 +32,12 @@ namespace ProductManagementAPI
             }
             else return NotFound();
         }
-
+        [HttpGet("id")]
+        public IActionResult GetProduct(int id)
+        {
+            var p = repos.GetProductById(id);
+            return Ok(p);
+        }
         [HttpPut("id")]
         public IActionResult UpdateProduct(Product product)
         {

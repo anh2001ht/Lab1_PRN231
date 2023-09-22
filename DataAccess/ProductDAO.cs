@@ -12,7 +12,7 @@ namespace DataAccess
         public static List<Product> GetProducts()
         {
             var lstProducts = new List<Product>();
-            using (var context = new Prn221dbContext())
+            using (var context = new Lab1231Context())
             {
                 lstProducts = context.Products.ToList();
             }
@@ -22,7 +22,7 @@ namespace DataAccess
 
         public static Product GetProductById(int id)
         {
-            using (var context = new Prn221dbContext())
+            using (var context = new Lab1231Context())
             {
                 var product = context.Products.FirstOrDefault(x => x.ProductId == id);
                 return product;
@@ -31,7 +31,7 @@ namespace DataAccess
 
         public static void AddProduct(Product product)
         {
-            using (var context = new Prn221dbContext())
+            using (var context = new Lab1231Context())
             {
                 context.Products.Add(product);
                 context.SaveChanges();
@@ -40,7 +40,7 @@ namespace DataAccess
 
         public static void UpdateProduct(Product product)
         {
-            using (var context = new Prn221dbContext())
+            using (var context = new Lab1231Context())
             {
                 context.Products.Update(product);
                 context.SaveChanges();
@@ -48,7 +48,7 @@ namespace DataAccess
         }
         public static void DeleteProduct(Product product)
         {
-            using (var context = new Prn221dbContext())
+            using (var context = new Lab1231Context())
             {
                 var p = context.Products.FirstOrDefault(x => x.ProductId == product.ProductId);
                 context.Products.Remove(p);
